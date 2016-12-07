@@ -1,6 +1,6 @@
 {
   "name": "ups-admin-ui",
-  "version": "1.1.4-1",
+  "version": "1.1.4-2",
   "repository": {
     "type": "git",
     "url": "https://github.com/aerogear/aerogear-unifiedpush-server/"
