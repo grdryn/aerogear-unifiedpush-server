@@ -1,3 +1,8 @@
+#!groovy
+
+// https://github.com/feedhenry/fh-pipeline-library
+@Library('fh-pipeline-library') _
+
 fhBuildNode(['label': 'java-ubuntu']) {
 
     stage('Setup') {
