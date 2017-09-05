@@ -23,7 +23,7 @@ fhBuildNode(['label': 'java-ubuntu']) {
             env.M2_SETTINGS = 'm2settings.xml'
             print "NEXUS SERVER ENABLED: ${env.NEXUS_SERVER_URL}"
         } else {
-            env.M2_SETTINGS = '~/.m2/settings.xml'
+            env.M2_SETTINGS = '/usr/local/apache-maven-3.1.1/conf/settings.xml'
             print "NEXUS SERVER NOT ENABLED"
         }
     }
