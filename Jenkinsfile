@@ -56,7 +56,7 @@ node('openshift') {
             fromDir: './docker/unifiedpush-eap',
             buildConfigName: 'aerogear-ups',
             imageRepoSecret: 'dockerhub',
-            outputImage: "docker.io/rhmap/unifiedpush-eap:${version}"
+            outputImage: "docker.io/rhmap/unifiedpush-eap:${version}-${env.BUILD_NUMBER}"
         ]
 
         buildWithDockerStrategy params
