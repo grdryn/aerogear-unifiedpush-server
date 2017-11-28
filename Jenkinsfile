@@ -50,10 +50,6 @@ fhBuildNode(['label': 'java-ubuntu']) {
         }
 
         archiveArtifacts "dist/unifiedpush-auth-server-*.war, dist/unifiedpush-server-as7-*.war, dist/target/*.tar.gz, dist/${buildInfoFileName}"
-        s3PublishArtifacts([
-                bucket: "fh-wendy-builds/aerogear-unifiedpush-server/${build}",
-                directory: "./dist"
-        ])
 
         sh "mkdir -p docker/unifiedpush-eap/artifacts"
         sh "cp dist/target/*.tar.gz docker/unifiedpush-eap/artifacts/"
@@ -67,7 +63,6 @@ fhBuildNode(['label': 'java-ubuntu']) {
                 componentBuild: build,
                 changeUrl: CHANGE_URL
         ]
-        fhcapComponentUpdate(updateParams)
         fhCoreOpenshiftTemplatesComponentUpdate(updateParams)
     }
 
