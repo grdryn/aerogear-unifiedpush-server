@@ -44,12 +44,9 @@ fhBuildNode(['label': 'java-ubuntu']) {
         sh "cp servers/auth-server/target/auth-server.war ./dist/unifiedpush-auth-server-${version}-${build}.war"
         sh "cp servers/ups-as7/target/ag-push.war ./dist/unifiedpush-server-as7-${version}-${build}.war"
 
-        String buildInfoFileName = 'build-info.json'
         dir('dist') {
-            buildInfoFileName = writeBuildInfo('unifiedpush', version)
+            archiveArtifacts writeBuildInfo('unifiedpush', version)
         }
-
-        archiveArtifacts "dist/unifiedpush-auth-server-*.war, dist/unifiedpush-server-as7-*.war, dist/target/*.tar.gz, dist/${buildInfoFileName}"
 
         sh "mkdir -p docker/unifiedpush-eap/artifacts"
         sh "cp dist/target/*.tar.gz docker/unifiedpush-eap/artifacts/"
