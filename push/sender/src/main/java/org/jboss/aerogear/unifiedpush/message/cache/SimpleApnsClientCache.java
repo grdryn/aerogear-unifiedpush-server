@@ -82,7 +82,7 @@ public class SimpleApnsClientCache {
             synchronized (apnsClientExpiringMap) {
                 client = constructor.construct();
 
-                if (client.isConnected()) {
+                if (client != null && client.isConnected()) {
                     putApnsClientForVariantID(connectionKey, client);
                 }
 
