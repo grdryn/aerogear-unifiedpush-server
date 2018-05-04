@@ -139,6 +139,15 @@
                     <named-formatter name="OPENSHIFT"/>
                 </formatter>
             </console-handler>
+            <logger category="org.hibernate">
+                <level name="ERROR"/>
+            </logger>
+            <logger category="com.turo.pushy">
+                <level name="WARN"/>
+            </logger>
+            <logger category="io.netty">
+                <level name="WARN"/>
+            </logger>
             <logger category="org.jboss.weld.Bean">
                 <level name="ERROR"/>
             </logger>
