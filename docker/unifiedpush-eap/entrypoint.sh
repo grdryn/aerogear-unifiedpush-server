@@ -22,4 +22,4 @@ configure_json_logging
 echo "Running $JBOSS_IMAGE_NAME image, version $JBOSS_IMAGE_VERSION-$JBOSS_IMAGE_RELEASE"
 
 # launch eap
-exec $JBOSS_HOME/bin/standalone.sh -b 0.0.0.0 $@
+exec $JBOSS_HOME/bin/standalone.sh -Djackson.deserialization.whitelist.packages=org,java,javax -b 0.0.0.0 $@
