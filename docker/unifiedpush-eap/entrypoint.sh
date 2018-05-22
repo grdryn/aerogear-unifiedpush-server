@@ -15,6 +15,7 @@ cd $UPSDIST/migrator/
 ./bin/ups-migrator update
 
 LOGGING_FILE=$JBOSS_HOME/standalone/configuration/logging.properties
+CONFIG_FILE=$JBOSS_HOME/standalone/configuration/standalone.xml
 
 . $JBOSS_HOME/bin/launch/json_logging.sh
 configure_json_logging
