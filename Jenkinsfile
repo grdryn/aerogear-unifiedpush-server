@@ -73,7 +73,7 @@ node('java8-centos7') {
 
 }
 
-node('openshift') {
+node('master') {
     stage('Build Image') {
         unstash "docker-ups"
 
@@ -84,6 +84,10 @@ node('openshift') {
                 outputImage: "docker.io/${DOCKER_HUB_ORG}/${DOCKER_HUB_REPO}:${version}-${build}"
         ]
 
-        buildWithDockerStrategy params
+        try {
+            buildWithDockerStrategy params
+        } finally {
+            sh "rm -rf ./docker/"
+        }
     }
 }
